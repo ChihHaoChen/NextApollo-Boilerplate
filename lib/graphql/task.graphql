@@ -1,0 +1,12 @@
+query Task($taskId: ObjectId!) {
+  task(taskId: $taskId) {
+    _id
+    title
+    description
+    completedAt
+    user {
+      _id
+      email
+    }
+  }
+}

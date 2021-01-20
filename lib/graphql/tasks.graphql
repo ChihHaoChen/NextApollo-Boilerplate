@@ -1,0 +1,8 @@
+query Tasks {
+  tasks {
+    _id
+    title
+    description
+    completedAt
+  }
+}
