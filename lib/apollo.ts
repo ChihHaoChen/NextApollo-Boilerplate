@@ -49,8 +49,9 @@ const initializeApollo = (initialState: any = null) => {
 	if (typeof window === 'undefined')	return _apolloClient
 	// creates the Apollo Client if in the Client browser
 	if (!apolloClient) apolloClient = _apolloClient
-}
 
+	return _apolloClient
+}
 
 const useApollo = (initialState: any)	=> {
 	const store = useMemo(() => initializeApollo(initialState), [initialState])
