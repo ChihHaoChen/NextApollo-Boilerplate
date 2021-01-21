@@ -37,7 +37,7 @@ const Header = ({ darkState, handleThemeChange }) => {
           <Typography variant="h6" className={classes.title}>
             <Link href="/">
               <LinkText href="" color="inherit">
-                Stream.me
+                Tasks.me
               </LinkText>
             </Link>
           </Typography>

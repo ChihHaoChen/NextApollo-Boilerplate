@@ -14,7 +14,7 @@ const SignUp = () => {
 
   const onSubmit = async (event) => {
     event.preventDefault()
-    signUp(email, password, phone)
+    signUp(email, phone, password)
   };
 
   return (
@@ -38,6 +38,15 @@ const SignUp = () => {
             type="password"
             className="form-control"
             label="Password"
+            required
+          />
+          <Box pb={2.5} />
+					<TextField
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            type="text"
+            className="form-control"
+            label="Phone"
             required
           />
           <Box pb={2.5} />
