@@ -8,7 +8,6 @@ import { useTasksQuery, Task } from 'lib/graphql/tasks.graphql'
 
 export default function Tasks() {
   const { data, loading, refetch } = useTasksQuery({ errorPolicy: 'ignore' })
-
   useEffect(() => {
     refetch()
 	}, [])
@@ -19,8 +18,7 @@ export default function Tasks() {
         <Typography variant="h4">Tasks</Typography>
       </Box>
       {!loading && data && data.tasks && (
-        // <Tasks tasks={data.tasks as Task[]} />
-				<p>{data.tasks as Task[]}</p>
+        <Posts tasks={data.tasks as Task[]} />
       )}
     </Container>
   );

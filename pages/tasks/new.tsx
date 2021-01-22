@@ -31,7 +31,6 @@ export default function CreateStream() {
       const { data } = await addTask({
         variables: { input: { title, description, completedAt } },
 			});
-			console.log('addTask id =>', data.addTask._id)
       if (data.addTask._id) {
         router.push('/tasks');
       }

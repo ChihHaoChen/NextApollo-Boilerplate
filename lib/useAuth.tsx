@@ -48,7 +48,6 @@ function useProvideAuth() {
 	const signIn = async (email, password) => {
 		try	{
 			const { data } = await signInMutation({ variables: { email, password }})
-			console.log('dataUser =>', data.signIn.token, data.signIn.user)
 			if (data.signIn.token && data.signIn.user)	{
 				sessionStorage.setItem('token', data.signIn.token)
 				client.resetStore().then(() => router.push('/'))
@@ -67,7 +66,6 @@ function useProvideAuth() {
 			
 			if (data.signUp.token && data.signUp.user)	{
 				sessionStorage.setItem('token', data.signUp.token)
-				console.log('token =>', data.signUp.token)
 				client.resetStore().then(() => { router.push('/') })
 			} else {
 				setError('Invalid Signup')
